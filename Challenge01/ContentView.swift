@@ -42,6 +42,8 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+
+//1 Header
 struct Header: View {
     var body: some View {
         HStack {
@@ -66,6 +68,8 @@ struct Header: View {
     }
 }
 
+
+//2 Search Box
 struct Search: View {
     @Binding var search : String
     var body: some View {
@@ -85,6 +89,8 @@ struct Search: View {
     }
 }
 
+
+//3. Top Title
 struct TopTitle: View {
     var body: some View {
         HStack{
@@ -95,26 +101,7 @@ struct TopTitle: View {
     }
 }
 
-struct SecondTitle: View {
-    var body: some View {
-        HStack{
-            Text("Explore Categoies").font(.system(size: 18, weight: .bold, design: .rounded)).padding(.leading,30)
-            Spacer()
-            Text("Show all").font(.system(size: 12, weight: .bold, design: .rounded)).foregroundColor(Color("iconcolor1")).padding(.trailing,30)
-        }.padding(.bottom, 10)
-    }
-}
-
-struct ThirdTitle: View {
-    var body: some View {
-        HStack{
-            Text("Recommended").font(.system(size: 18, weight: .bold, design: .rounded)).padding(.leading,30)
-            Spacer()
-            Text("Show all").font(.system(size: 12, weight: .bold, design: .rounded)).foregroundColor(Color("iconcolor1")).padding(.trailing,30)
-        }.padding(.bottom, 10)
-    }
-}
-
+//4 Konten Food
 struct KontentFood: View {
     var image : String = ""
     var body: some View {
@@ -153,12 +140,36 @@ struct KontentFood: View {
         }
         .padding(15)
         .background(Color.white).cornerRadius(30)
-        
-        
-        
     }
 }
 
+//5 Food Content
+struct FoodContent: View {
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false){
+            HStack(spacing:20){
+                KontentFood(image: "food1")
+                KontentFood(image: "food2")
+                KontentFood(image: "food3")
+                KontentFood(image: "food4")
+            }.padding([.leading,.trailing], 30)
+        }.padding(.bottom,25)
+    }
+}
+
+
+//6 Second Title
+struct SecondTitle: View {
+    var body: some View {
+        HStack{
+            Text("Explore Categoies").font(.system(size: 18, weight: .bold, design: .rounded)).padding(.leading,30)
+            Spacer()
+            Text("Show all").font(.system(size: 12, weight: .bold, design: .rounded)).foregroundColor(Color("iconcolor1")).padding(.trailing,30)
+        }.padding(.bottom, 10)
+    }
+}
+
+//7 Icon Kategori
 struct IconCategories: View {
     var color : String = ""
     var icon: String = ""
@@ -178,19 +189,7 @@ struct IconCategories: View {
     }
 }
 
-struct FoodContent: View {
-    var body: some View {
-        ScrollView(.horizontal, showsIndicators: false){
-            HStack(spacing:20){
-                KontentFood(image: "food1")
-                KontentFood(image: "food2")
-                KontentFood(image: "food3")
-                KontentFood(image: "food4")
-            }.padding([.leading,.trailing], 30)
-        }.padding(.bottom,25)
-    }
-}
-
+//8 Kategori
 struct CategoriesContent: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
@@ -206,6 +205,20 @@ struct CategoriesContent: View {
     }
 }
 
+//9 Third Title
+struct ThirdTitle: View {
+    var body: some View {
+        HStack{
+            Text("Recommended").font(.system(size: 18, weight: .bold, design: .rounded)).padding(.leading,30)
+            Spacer()
+            Text("Show all").font(.system(size: 12, weight: .bold, design: .rounded)).foregroundColor(Color("iconcolor1")).padding(.trailing,30)
+        }.padding(.bottom, 10)
+    }
+}
+
+
+
+//10 Food Content
 struct FoodContentSecond: View {
     var body: some View {
         ZStack{
@@ -244,6 +257,8 @@ struct FoodContentSecond: View {
     }
 }
 
+
+//11 Second Content
 struct SecondFoodContent: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false){
